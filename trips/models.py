@@ -2,15 +2,16 @@ from django.db import models
 
 from base.utils import rename_uploaded_file
 
+
 class PackageTheme(models.Model):
     STATUS = [
-        ('Publish', 'Publish'),
-        ('Draft', 'Draft'),
+        ("Publish", "Publish"),
+        ("Draft", "Draft"),
     ]
 
     theme = models.CharField(max_length=255, unique=True)
     image = models.ImageField(upload_to=rename_uploaded_file)
-    status = models.CharField(max_length=10, choices=STATUS)
+    status = models.CharField(max_length=10, choices=STATUS, default="Publish")
 
     @property
     def image_upload_folder(self):
@@ -18,7 +19,7 @@ class PackageTheme(models.Model):
 
     def __str__(self):
         return self.theme.title()
-    
+
 
 class PackageType(models.Model):
     type_name = models.CharField(max_length=255, unique=True)
@@ -30,11 +31,21 @@ class PackageType(models.Model):
 class Destination(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    package_theme = models.ForeignKey(PackageTheme, on_delete=models.SET_NULL,  related_name="destinations_theme", null=True)
-    package_type = models.ForeignKey(PackageType, on_delete=models.SET_NULL,  related_name="destinations_type", null=True)
+    package_theme = models.ForeignKey(
+        PackageTheme,
+        on_delete=models.SET_NULL,
+        related_name="destinations_theme",
+        null=True,
+    )
+    package_type = models.ForeignKey(
+        PackageType,
+        on_delete=models.SET_NULL,
+        related_name="destinations_type",
+        null=True,
+    )
     image = models.ImageField(upload_to=rename_uploaded_file)
     nights = models.PositiveIntegerField()
-    number_of_hotels = models.PositiveIntegerField() 
+    number_of_hotels = models.PositiveIntegerField()
     stay_mode = models.CharField(max_length=50)
     starting_price = models.DecimalField(max_digits=10, decimal_places=2)
 
