@@ -52,3 +52,6 @@ class Destination(models.Model):
     @property
     def image_upload_folder(self):
         return "destination-images/"
+    
+    def __str__(self):
+        return self.name.title()
