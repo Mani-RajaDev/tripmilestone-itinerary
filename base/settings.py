@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'trips.apps.TripsConfig',
+    'itinerary.apps.ItineraryConfig',
     'storages',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +159,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom user model
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+# CKEditor 
+CKEDITOR_UPLOAD_PATH = 'itinerary-images/'
+CKEDITOR_FILENAME_GENERATOR = 'base.utils.rename_uploaded_file_ckeditor'
+CKEDITOR_IMAGE_BACKEND = 'ckeditor_uploader.backends.pillow_backend.PillowBackend'
+CKEDITOR_THUMBNAIL_SIZE = (300, 300)
+CKEDITOR_IMAGE_QUALITY = 75
+CKEDITOR_FORCE_JPEG_COMPRESSION = True
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+CKEDITOR_RESTRICT_BY_DATE = False
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+        'width': 900,
+    }
+}
