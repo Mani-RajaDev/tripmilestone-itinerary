@@ -1,2 +1,2 @@
 ## TripMilestone
-Welcome to TripMilestone! This is a web application built with Django that allows users to explore and discover various travel destinations.
+This repository contains the source code for the itinerary management feature of our travel app Tripmilestone.
