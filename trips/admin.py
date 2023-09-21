@@ -4,7 +4,7 @@ from .models import PackageTheme, PackageType, Destination
 
 @admin.register(PackageTheme)
 class PackageThemeAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ("theme",)}
 
 @admin.register(PackageType)
 class PackageTypeAdmin(admin.ModelAdmin):

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from base.utils import rename_uploaded_file
 
@@ -12,6 +13,7 @@ class PackageTheme(models.Model):
     theme = models.CharField(max_length=255, unique=True)
     image = models.ImageField(upload_to=rename_uploaded_file)
     status = models.CharField(max_length=10, choices=STATUS, default="Publish")
+    slug = models.SlugField(default="", null=False)
 
     @property
     def image_upload_folder(self):
@@ -52,6 +54,6 @@ class Destination(models.Model):
     @property
     def image_upload_folder(self):
         return "destination-images/"
-    
+
     def __str__(self):
         return self.name.title()
