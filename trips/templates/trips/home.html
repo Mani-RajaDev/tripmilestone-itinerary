@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripmilestone - Itinerary</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div class="wrap">
+        <div class="message">
+            <p class="message__text">Please view this website in mobile</p>
+        </div>
+        <header class="header">
+            <div class="header__logo">
+                <img src="{% static "logo/tripmilestone-logo.png" %}" alt="Tripmilestone Logo" class="header__logo-image">
+                <p class="header__logo-text">Tripmilestone</p>
+            </div>
+            <p class="header__subtitle">Themed Budget Package</p>
+        </header>
+        <main class="package-container">
+            {% for package_theme in package_themes %}
+                {% if package_theme.status == 'Publish' %}
+                    <a href="{{ package_theme.get_absolute_url }}" class="package-container__item">
+                    <section class="package">
+                        <img class="package__img" src="{{package_theme.image.url}}" alt="Pocket Friendly Theme">
+                        <p class="package__name">{{package_theme.theme.title}}</p>
+                    </section>
+                </a>
+                {% endif %}
+            {% endfor %}
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+:root {
+  --primary-font: "Merienda", cursive;
+  --secondary-font: "Montserrat", sans-serif;
+  --site-bg-clr: #bcaaa4;
+  --title-clr: #5d4037;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:link {
+  text-decoration: none;
+}
+
+body {
+  background: var(--site-bg-clr);
+  font-family: var(--secondary-font);
+}
+
+/* Package theme styles start */
+
+.wrap {
+  padding: 40px 0 0;
+}
+
+.message {
+  display: none;
+}
+
+.message__text {
+  color: var(--primary-clr);
+  font-family: var(--site-font);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.header__logo-text {
+  font-family: var(--primary-font);
+  color: var(--title-clr);
+  font-size: 18px;
+}
+
+.header__subtitle {
+  color: var(--title-clr);
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.package-container {
+  padding: 40px 0 0;
+}
+
+.package-container__item {
+  display: block;
+  width: 260px;
+  height: 340px;
+  margin: 0 auto 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+
+.package {
+  position: relative;
+}
+
+.package__img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.package__name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  font-family: var(--site-font);
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* Package theme styles end */
+
+/* Destination styles start */
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0%;
+}
+
+.destination-container {
+  margin: 40px 0;
+}
+
+.destination {
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: center;
+}
+
+.destination__image {
+  height: 280px;
+  margin: 0 0 12px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.destination__image-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.destination__image-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  padding: 5px;
+  color: #fff;
+  font-size: 0.875rem;
+  background: rgba(0 0 0 / 0.5);
+  border-left: 4px solid #71a32a;
+  border-top-right-radius: 10px;
+}
+
+
+.destination__package-theme {
+  margin: 0 0 4px 0;
+  color: #7aba42;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.destination__name {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 10px 0;
+  font-family: var(--primary-font);
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+.destination__prev,
+.destination__nxt {
+  cursor: pointer;
+}
+
+.destination__prev {
+  margin-right: 10px;
+}
+
+.destination__nxt {
+  margin-left: 10px;
+}
+
+.destination__milestone {
+  margin: 8px;
+  padding: 4px 10px 10px;
+  color: var(--title-clr);
+  font-family: var(--primary-font);
+  font-size: 0.75rem;
+}
+
+.destination__description {
+  padding: 4px 10px 10px;
+  color: #7c858a;
+  font-size: 0.875rem;
+}
+
+.destination__details {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: #fff;
+  background: #82bb30;
+}
+
+.destination__stay-detail,
+.destination__hotel-detail,
+.destination__price-detail {
+  flex: 1;
+}
+
+.destination__stay-detail p:first-child,
+.destination__hotel-detail p:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.destination__stay-detail p:nth-of-type(2),
+.destination__hotel-detail p:nth-of-type(2),
+.destination__price-detail p:nth-of-type(2) {
+  font-size: 16px;
+}
+
+.destination__itinerary {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  background: #81DE8E;
+}
+
+.destination__itinerary-link {
+  flex: 1;
+}
+
+.destination__itinerary-link > a {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+@media (min-width: 640px) {
+  .message {
+    display: block;
+    margin: 160px 0;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .package-container {
+    display: none;
+  }
+
+  .destination-container {
+    display: none;
+  }
+}

@@ -15,6 +15,9 @@ class PackageTheme(models.Model):
     status = models.CharField(max_length=10, choices=STATUS, default="Publish")
     slug = models.SlugField(default="", null=False)
 
+    def get_absolute_url(self):
+        return reverse("trips:destinations", kwargs={"pk": self.id, "slug": self.slug})
+
     @property
     def image_upload_folder(self):
         return "package-images/"
