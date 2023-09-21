@@ -125,7 +125,7 @@ body {
 }
 
 .destination {
-  width: 300px;
+  width: 310px;
   margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
@@ -167,25 +167,25 @@ body {
 }
 
 .destination__name {
-  display: flex;
-  justify-content: center;
   margin: 0 0 10px 0;
   font-family: var(--primary-font);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 2.25rem;
+  position: relative;
 }
 
 .destination__prev,
 .destination__nxt {
+  position: absolute;
   cursor: pointer;
 }
 
 .destination__prev {
-  margin-right: 10px;
+  left: 10px;
 }
 
 .destination__nxt {
-  margin-left: 10px;
+  right: 10px;
 }
 
 .destination__milestone {
@@ -204,8 +204,8 @@ body {
 
 .destination__details {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 12px;
   color: #fff;
   background: #82bb30;
 }
@@ -214,6 +214,13 @@ body {
 .destination__hotel-detail,
 .destination__price-detail {
   flex: 1;
+  padding: 10px 5px;
+  border-right: 1px solid #3b6203;
+}
+
+.destination__price-detail {
+  margin: 0;
+  border: none;
 }
 
 .destination__stay-detail p:first-child,

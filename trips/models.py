@@ -49,6 +49,8 @@ class Destination(models.Model):
         null=True,
     )
     image = models.ImageField(upload_to=rename_uploaded_file)
+    image_overlay = models.CharField(max_length=255, default="")
+    milestone_covered = models.CharField(max_length=100, default="")
     nights = models.PositiveIntegerField()
     number_of_hotels = models.PositiveIntegerField()
     stay_mode = models.CharField(max_length=50)
